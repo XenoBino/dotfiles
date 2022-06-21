@@ -1,0 +1,12 @@
+[submodule "config/bundle/Vundle.vim"]
+	path = config/bundle/Vundle.vim
+	url = https://github.com/vundlevim/Vundle.vim
+[submodule "config/bundle/nerdtree"]
+	path = config/bundle/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule "config/bundle/vim-airline"]
+	path = config/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "config/bundle/vim-airline-themes"]
+	path = config/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
