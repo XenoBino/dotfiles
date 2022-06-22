@@ -10,3 +10,6 @@
 [submodule "config/bundle/vim-airline-themes"]
 	path = config/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "config/bundle/vim-cycle-airline-theme"]
+	path = config/bundle/vim-cycle-airline-theme
+	url = https://github.com/qdddddd/vim-cycle-airline-theme
