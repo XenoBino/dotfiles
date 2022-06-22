@@ -1,8 +1,8 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/plugins/Vundle.vim
 
-call vundle#begin()
+call vundle#begin('~/.vim/plugins')
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'

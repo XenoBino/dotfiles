@@ -1,21 +1,21 @@
 [submodule "config/bundle/Vundle.vim"]
-	path = config/bundle/Vundle.vim
+	path = config/plugins/Vundle.vim
 	url = https://github.com/vundlevim/Vundle.vim
 [submodule "config/bundle/nerdtree"]
-	path = config/bundle/nerdtree
+	path = config/plugins/nerdtree
 	url = https://github.com/preservim/nerdtree
 [submodule "config/bundle/vim-airline"]
-	path = config/bundle/vim-airline
+	path = config/plugins/vim-airline
 	url = https://github.com/vim-airline/vim-airline
 [submodule "config/bundle/vim-airline-themes"]
-	path = config/bundle/vim-airline-themes
+	path = config/plugins/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
 [submodule "config/bundle/vim-cycle-airline-theme"]
-	path = config/bundle/vim-cycle-airline-theme
+	path = config/plugins/vim-cycle-airline-theme
 	url = https://github.com/qdddddd/vim-cycle-airline-theme
 [submodule "config/bundle/vim-fugitive"]
-	path = config/bundle/vim-fugitive
+	path = config/plugins/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
 [submodule "config/bundle/auto-pairs"]
-	path = config/bundle/auto-pairs
+	path = config/plugins/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
