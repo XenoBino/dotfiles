@@ -16,3 +16,6 @@
 [submodule "config/bundle/vim-fugitive"]
 	path = config/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "config/bundle/auto-pairs"]
+	path = config/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
