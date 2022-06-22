@@ -13,3 +13,6 @@
 [submodule "config/bundle/vim-cycle-airline-theme"]
 	path = config/bundle/vim-cycle-airline-theme
 	url = https://github.com/qdddddd/vim-cycle-airline-theme
+[submodule "config/bundle/vim-fugitive"]
+	path = config/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
