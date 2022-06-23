@@ -52,7 +52,7 @@ This is a list of the plugins used:
 - [qdddddd/vim-cycle-airline-them][vim-cycle-airline-them]
 - [tpope/vim-fugitive][vim-fugitive]
 - [jiangmiao/auto-pairs][auto-pairs]
-
+- [rafi/awesome-vim-colorschemes][awesome-vim-colorschemes]
 
 [Vundle.vim]: https://github.com/VundleVim/Vundle.vim
 [nerdtree]: https://github.com/preservim/nerdtree
@@ -61,3 +61,4 @@ This is a list of the plugins used:
 [vim-cycle-airline-them]: https://github.com/qdddddd/vim-cycle-airline-them
 [vim-fugitive]: https://github.com/tpope/vim-fugitive
 [auto-pairs]: https://github.com/jiangmiao/auto-pairs
+[awesome-vim-colorschemes]: https://github.com/rafi/awesome-vim-colorschemes

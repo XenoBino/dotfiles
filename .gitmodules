@@ -19,3 +19,6 @@
 [submodule "config/bundle/auto-pairs"]
 	path = config/plugins/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+[submodule "config/plugins/awesome-vim-colorschemes"]
+	path = config/plugins/awesome-vim-colorschemes
+	url = https://github.com/rafi/awesome-vim-colorschemes

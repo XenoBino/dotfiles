@@ -11,6 +11,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'qdddddd/vim-cycle-airline-theme'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'rafi/awesome-vim-colorschemes'
 
 call vundle#end()
 filetype plugin indent on
