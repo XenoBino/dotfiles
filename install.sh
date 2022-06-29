@@ -1,10 +1,21 @@
 #!/usr/bin/bash
 
-SCRIPT_PATH="$(dirname -- "$( readlink -f -- "$0"; )")"
+DOT_FILES="$(dirname -- "$( readlink -f -- "$0"; )")"
 TIMESTAMP="$(date +"%S:%M:%H@%Y-%m-%d")"
 
-mv $HOME/.vimrc $HOME/.vimrc~$TIMESTAMP
-mv $HOME/.vim   $HOME/.vim~$TIMESTAMP
+make_backup() {
+	if [ -f $HOME/$1 ]; then
+		mv $HOME/$1 $HOME/$1~$TIMESTAMP
+	fi
+}
 
-ln -s $SCRIPT_PATH/vimrc.vim $HOME/.vimrc
-ln -snf $SCRIPT_PATH/config $HOME/.vim
+install_file() {
+	make_backup $2 && ln -s $DOT_FILES/$1 $HOME/$2
+}
+
+install_dir() {
+	make_backup $2 && ln -snf $DOT_FILES/$1 $HOME/$2
+}
+
+install_file vimrc.vim .vimrc
+install_dir vim .vim

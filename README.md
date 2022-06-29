@@ -13,8 +13,8 @@ The original config in the home directory will not be merged or overwritten,
 but rather be moved to `~/.vimrc~<TIMESTAMP>` and `~/.vim~<TIMESTAMP>`.
 
 The installation script is very minimal that it relies on a few things, being
-`$HOME` environment variable and `date`, `readlink -f`, `basename`
-in `$PATH`.
+`$HOME` environment variable and the executables `date`, `readlink -f`, `basename`
+available in `$PATH`.
 
 ## Directory structure
 
@@ -24,39 +24,42 @@ in `$PATH`.
 |__ README.md  # A readme file
 |__ vimrc.vim  # Will be installed to ~/.vimrc.
 |              # Nothing more than a few `runtime` calls to the actual
-|              # config files located under `config/*.vim`
+|              # config files located under `vim/*.vim`
 |
-|__ config/    # Will be installed to ~/.vim/
+|__ vim/       # Will be installed to ~/.vim/
    |
-   |__ vundle.vim        # Vundle config and `Plugin` commands
-   |__ plugin-config.vim # Will be loaded before `vundle.vim`.
-   |                     # Used to configure plugins.
-   |
+   |__ setup.vim         # The first file called after
+   |__                   # `$VIMRUNTIME/defaults.vim`
+   |__ theme.vim         # Color scheme and status line theme settings
+   |__ plugin-config.vim # Used to configure plugins.
    |__ prefrences.vim    # Personal prefrences, this is where things such as
    |                     # `set number` reside.
    |
-   |__ plugins/           # This is where plugins live, as git submodules.
+   |__ pack/           # This is where plugins exist, as git submodules.
       |
-      |__ ...
-      |__ ...
+      |__ plugins
+         |
+		 |__ start  # Plugins that are always active
+		 |  |
+		 |  |__ ...
+		 |  |__ ...
+		 |
+		 |__ opt    # Optional plugins
+		    |
+			|__ ...
+			|__ ...
 ```
 
 ## Plugins
 
 This is a list of the plugins used:
 
-- [VundleVim/Vundle.vim][Vundle.vim]
-- [vim-airline/vim-airline][vim-airline]
-- [vim-airline/vim-airline-themes][vim-airline-themes]
-- [qdddddd/vim-cycle-airline-them][vim-cycle-airline-them]
+- [itchyny/lightline.vim][itchyny/lightline.vim]
 - [tpope/vim-fugitive][vim-fugitive]
 - [jiangmiao/auto-pairs][auto-pairs]
 - [rafi/awesome-vim-colorschemes][awesome-vim-colorschemes]
 
-[Vundle.vim]: https://github.com/VundleVim/Vundle.vim
-[vim-airline]: https://github.com/vim-airline/vim-airline
-[vim-airline-themes]: https://github.com/vim-airline/vim-airline-themes
-[vim-cycle-airline-them]: https://github.com/qdddddd/vim-cycle-airline-them
+[itchyny/lightline.vim]: https://github.com/itchyny/lightline.vin
 [vim-fugitive]: https://github.com/tpope/vim-fugitive
 [auto-pairs]: https://github.com/jiangmiao/auto-pairs
 [awesome-vim-colorschemes]: https://github.com/rafi/awesome-vim-colorschemes
