@@ -1,4 +1,5 @@
-runtime $VIMRUNTIME/defaults.vim
+vim9script
+
 runtime setup.vim
 runtime theme.vim
 runtime plugin-config.vim
