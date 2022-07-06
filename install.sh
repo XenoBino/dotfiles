@@ -29,3 +29,6 @@ install_file bash_aliases.sh .bash_aliases
 install_file bash_login.sh .bash_login
 install_file bash_logout.sh .bash_logout
 install_dir bash .bash
+
+# Install git config
+install_file gitconfig.ini .gitconfig
