@@ -22,6 +22,8 @@ install_file vimrc.vim .vimrc
 install_dir vim .vim
 
 # Install bash config
+make_backup .hushlogin
+touch $HOME/.hushlogin
 install_file bashrc.sh .bashrc
 install_file bash_aliases.sh .bash_aliases
 install_file bash_login.sh .bash_login
