@@ -2,10 +2,24 @@
 
 DOT_FILES="$(dirname -- "$( readlink -f -- "$0"; )")"
 TIMESTAMP="$(date +"%S:%M:%H@%Y-%m-%d")"
+LOG_FILE=
+
+for i in {1..10000}; do
+	if ! [ -f $HOME/.XenoBino.dotfiles.$i.log ]; then
+		LOG_FILE=$HOME/.XenoBino.dotfile.$i.log
+		break
+	fi
+done
+
+if [ "$LOG_FILE" == "" ]; then
+	echo -e "\e[31mError: \e[0m Too many ~/.XenoBino.dotfiles.*.log files" >&2
+fi
 
 make_backup() {
 	if [ -f $HOME/$1 ] || [ -d $HOME/$1 ]; then
-		mv $HOME/$1 $HOME/$1~$TIMESTAMP
+		backup_name=$HOME/$1~$TIMESTAMP
+		mv $HOME/$1 $backup_name
+		echo $backup_name >> $LOG_FILE
 	fi
 }
 
