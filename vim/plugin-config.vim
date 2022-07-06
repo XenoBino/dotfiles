@@ -10,7 +10,13 @@ g:lightline = {
         "right": [
             [ "lineinfo" ],
             [ "percent" ],
-            [ "gitbranch", "fileformat", "fileencoding", "filetype", "hexvalue" ]
+            [
+                "gitbranch",
+                "fileformat",
+                "fileencoding",
+                "filetype",
+                "hexvalue"
+            ]
         ]
     },
     "inactive": {
@@ -19,75 +25,125 @@ g:lightline = {
     },
     "component": {},
     "component_function": {
-    	"gitbranch": "LightlineGitHead",
-    	"filename": "LightlineFilename",
-    	"filetype": "LightlineFiletype",
-    	"hexvalue": "LightlineHexValue",
-    	"fileformat": "LightlineFileFormat",
-    	"fileencoding": "LightlineFileEncoding",
-    	"lineinfo": "LightlineCursor"
+    	"gitbranch": "g:StatusLineGitHead",
+    	"filename": "g:StatusLineFilename",
+    	"filetype": "g:StatusLineFiletype",
+    	"hexvalue": "g:StatusLineHexValue",
+    	"fileformat": "g:StatusLineFileFormat",
+    	"fileencoding": "g:StatusLineFileEncoding",
+    	"lineinfo": "g:StatusLineCursor",
+        "percent": "g:StatusLineFilePercentage"
     },
 }
 
-def LightlineGitHead(): string 
-	if execute("FugitiveIsGitDir") !=# "" && !FiletypeBlackListed() && winwidth(0) > 50
-		const head = execute("FugitiveHead")
-		const branch_icon = " "
-		return head .. branch_icon
-	endif
+def g:StatusLineFilePercentage(): string
+    const properWidth = winwidth(0) > 40
+    const blacklisted = FiletypeBlackListed()
 
-	return ""
+    return properWidth && !blacklisted ? "%P" : ""
 enddef
 
-def LightlineCursor(): string
-	if winwidth(0) > 45
-		const line = line(".")
-		const char = winwidth(0) > 50 ? col(".") : ""
+def g:StatusLineGitHead(): string
+    const gitDir = g:FugitiveIsGitDir()
+    const blacklisted = FiletypeBlackListed()
+    const properWidth = winwidth(0) > 50
 
-		return line .. ":" .. char
-	endif
-
-	return ""
+    if gitDir && !blacklisted && properWidth
+        const head = g:FugitiveHead()
+        const branch_icon = ""
+        return head .. ' ' .. branch_icon
+    endif
+ 
+    return ""
 enddef
 
-def LightlineHexValue(): string
-	return !FiletypeBlackListed() && winwidth(0) >= 80 ? "0x%B" : ""
+def g:StatusLineCursor(): string
+    const properWidthLine = winwidth(0) > 45
+    const properWidthCol = winwidth(0) > 50 
+
+    const line = line(".")
+    const col = col(".")
+ 
+    if properWidthCol && properWidthLine
+        return line .. ':' .. col
+    elseif properWidthLine
+        return '' .. line
+    endif
+
+    return ""
 enddef
 
-def LightlineFileEncoding(): string
-	return !FiletypeBlackListed() && winwidth(0) >= 70 ? &encoding : ""
+def g:StatusLineHexValue(): string
+    const blacklisted = FiletypeBlackListed()
+    const properWidth = winwidth(0) >= 80 
+
+    return !blacklisted && properWidth ? '0x%B' : ""
 enddef
 
-def LightlineFileFormat(): string
-	return !FiletypeBlackListed() && winwidth(0) >= 80 ? &fileformat : ""
+def g:StatusLineFileEncoding(): string
+    return !FiletypeBlackListed() && winwidth(0) >= 70 ? &encoding : ""
 enddef
 
-def LightlineFiletype(): string
-	return !FiletypeBlackListed() && winwidth(0) >= 40 ? &filetype : ""
+def g:StatusLineFileFormat(): string
+    return !FiletypeBlackListed() && winwidth(0) >= 80 ? &fileformat : ""
 enddef
 
-def LightlineReadonly(): string
-	return &readonly && winwidth(0) > 50 && !FiletypeBlackListed() ? " (RO)" : ""
+def g:StatusLineFiletype(): string
+    return !FiletypeBlackListed() && winwidth(0) >= 40 ? &filetype : ""
+enddef
+
+def StatusLineReadonly(): string
+    const properWidth = winwidth(0) > 50
+    const blacklisted = FiletypeBlackListed()
+
+    if &readonly && properWidth && !blacklisted
+        return "(RO)"
+    endif
+	
+    return ""
 enddef
 
 def FiletypeBlackListed(): bool
-	return &filetype =~ "\v(help|vimfiler|unite|netrw)"
+    return &filetype =~ "\v(help|vimfiler|unite|netrw|terminal)"
 enddef
 
-def LightlineModified(): string
-	return &modified && winwidth(0) > 60 ? " ●" : ""
+def StatusLineModified(): string
+    const properWidth = winwidth(0) > 60
+
+    if &modified && properWidth
+        return "●"
+    endif
+
+    return ""
 enddef
 
-def LightlineFilename(): string
-	const filename = expand("%:t") !=# "" ? expand("%:t") : "[New file]"
-	const name = filename .. LightlineReadonly() .. LightlineModified()
+def g:StatusLineFilename(): string
+    const filename = expand("%:t") !=# "" ? expand("%:t") : "[New file]"
 
-	return name
+    const readonly = &readonly ? "(RO)" : "" 
+    const modified = &modified ? "●" : ""
+
+    var name = filename
+
+    if readonly != "" && winwidth(0) > 50
+        name ..= " " .. readonly
+    endif
+
+    if modified != "" && winwidth(0) > 60
+        name ..= " " .. modified
+    endif
+
+    return name
 enddef
 
-defcompile LightlineGitHead
-defcompile LightlineFilename
-defcompile LightlineFiletype
+defcompile g:StatusLineGitHead
+defcompile g:StatusLineFilename
+defcompile g:StatusLineFiletype
+defcompile g:StatusLineFileFormat
+defcompile g:StatusLineFileEncoding
+defcompile g:StatusLineHexValue
+defcompile g:StatusLineCursor
+defcompile g:StatusLineFilePercentage
 
 g:netrw_liststyle = 3
 g:netrw_banner = 0
