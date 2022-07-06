@@ -4,9 +4,11 @@ My personal dot files.
 ## Installation
 
 Run:
+
 ```shell
 ./install.sh
 ```
+
 to install the files to your home directory.
 
 The original files in the home directory will not be merged or overwritten,
@@ -18,7 +20,8 @@ available in `$PATH`.
 
 ## Directory structure
 
-```
+```txt
+dotfiles
 |
 |__ install.sh # The installation script
 |__ README.md  # A readme file
@@ -39,15 +42,15 @@ available in `$PATH`.
 |     |
 |     |__ plugins
 |        |
-|   	 |__ start  # Plugins that are always active
-|   	 |  |
-|   	 |  |__ ...
-|   	 |  |__ ...
-|   	 |
-|   	 |__ opt    # Optional plugins
-|   	    |
-|   		|__ ...
-|   		|__ ...
+|        |__ start  # Plugins that are always active
+|        |  |
+|        |  |__ ...
+|        |  |__ ...
+|        |
+|        |__ opt    # Optional plugins
+|           |
+|           |__ ...
+|           |__ ...
 |
 |__ bash/
    |
