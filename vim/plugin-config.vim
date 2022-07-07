@@ -44,6 +44,10 @@ def g:StatusLineFilePercentage(): string
 enddef
 
 def g:StatusLineGitHead(): string
+    if !exists("g:is_a_project")
+        return ""
+    endif
+
     const gitDir = g:FugitiveIsGitDir()
     const blacklisted = FiletypeBlackListed()
     const properWidth = winwidth(0) > 50
@@ -104,7 +108,7 @@ def StatusLineReadonly(): string
 enddef
 
 def FiletypeBlackListed(): bool
-    return &filetype =~ "\v(help|vimfiler|unite|netrw|terminal)"
+    return &filetype =~ "\v(help|vimfiler|unite|terminal)"
 enddef
 
 def StatusLineModified(): string
@@ -135,18 +139,3 @@ def g:StatusLineFilename(): string
 
     return name
 enddef
-
-defcompile g:StatusLineGitHead
-defcompile g:StatusLineFilename
-defcompile g:StatusLineFiletype
-defcompile g:StatusLineFileFormat
-defcompile g:StatusLineFileEncoding
-defcompile g:StatusLineHexValue
-defcompile g:StatusLineCursor
-defcompile g:StatusLineFilePercentage
-
-g:netrw_liststyle = 3
-g:netrw_banner = 0
-g:netrw_browse_split = 4
-g:netrw_winsize = 25
-g:netrw_altv = 1

@@ -11,17 +11,20 @@
 	path = config/plugins/vim-cycle-airline-theme
 	url = https://github.com/qdddddd/vim-cycle-airline-theme
 [submodule "config/bundle/vim-fugitive"]
-	path = vim/pack/plugins/start/vim-fugitive
+	path = vim/pack/workspace/opt/fugitive
 	url = https://github.com/tpope/vim-fugitive
 [submodule "config/bundle/auto-pairs"]
-	path = vim/pack/plugins/start/auto-pairs
+	path = vim/pack/syntax/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
 [submodule "config/plugins/awesome-vim-colorschemes"]
-	path = vim/pack/plugins/start/awesome-vim-colorschemes
+	path = vim/pack/theme/start/awesome-vim-colorschemes
 	url = https://github.com/rafi/awesome-vim-colorschemes
 [submodule "config/pack/plugins/start/lightline"]
-	path = vim/pack/plugins/start/lightline
+	path = vim/pack/theme/start/lightline
 	url = https://github.com/itchyny/lightline.vim
 [submodule "config/pack/plugins/start/vim-gitbranch"]
 	path = config/pack/plugins/start/vim-gitbranch
 	url = https://github.com/itchyny/vim-gitbranch
+[submodule "vim/pack/plugins/start/nerdtree"]
+	path = vim/pack/workspace/opt/nerdtree
+	url = https://github.com/preservim/nerdtree
