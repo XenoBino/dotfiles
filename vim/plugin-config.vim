@@ -71,7 +71,7 @@ def g:StatusLineCursor(): string
     if properWidthCol && properWidthLine
         return line .. ':' .. col
     elseif properWidthLine
-        return '' .. line
+        return line .. '' # String cast
     endif
 
     return ""
@@ -96,45 +96,30 @@ def g:StatusLineFiletype(): string
     return !FiletypeBlackListed() && winwidth(0) >= 40 ? &filetype : ""
 enddef
 
-def StatusLineReadonly(): string
-    const properWidth = winwidth(0) > 50
-    const blacklisted = FiletypeBlackListed()
-
-    if &readonly && properWidth && !blacklisted
-        return "(RO)"
-    endif
-	
-    return ""
-enddef
-
 def FiletypeBlackListed(): bool
-    return &filetype =~ "\v(help|vimfiler|unite|terminal)"
-enddef
-
-def StatusLineModified(): string
-    const properWidth = winwidth(0) > 60
-
-    if &modified && properWidth
-        return "●"
-    endif
-
-    return ""
+    return &filetype =~ "\v(help|vimfiler|netrw|nerdtree|unite|terminal)"
 enddef
 
 def g:StatusLineFilename(): string
+	const blacklisted = FiletypeBlackListed()
+
+	if blacklisted
+		return &filetype
+	endif
+
     const filename = expand("%:t") !=# "" ? expand("%:t") : "[New file]"
 
-    const readonly = &readonly ? "(RO)" : "" 
-    const modified = &modified ? "●" : ""
+    const readonly = &readonly && winwidth(0) > 50 ? "(RO)" : "" 
+    const modified = &modified && winwidth(0) > 60 ? "●" : ""
 
     var name = filename
 
-    if readonly != "" && winwidth(0) > 50
+    if readonly != ""
         name ..= " " .. readonly
     endif
 
-    if modified != "" && winwidth(0) > 60
-        name ..= " " .. modified
+    if modified != ""
+		name ..= " " .. modified
     endif
 
     return name
