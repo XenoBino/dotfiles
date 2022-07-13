@@ -68,7 +68,12 @@ def g:StatusLineFilePercentage(): string
     const properWidth = winwidth(0) > 40
     const blacklisted = FiletypeBlackListed()
 
-    return properWidth && !blacklisted ? "%P" : ""
+    if !properWidth || blacklisted
+        return ""
+    endif
+
+    # From https://vi.stackexchange.com/a/3895
+    return line('.') * 100 / line('$') .. '%'
 enddef
 
 def g:StatusLineGitHead(): string
@@ -109,7 +114,29 @@ def g:StatusLineHexValue(): string
     const blacklisted = FiletypeBlackListed()
     const properWidth = winwidth(0) >= 80 
 
-    return !blacklisted && properWidth ? '0x%B' : ""
+    # Don't display hex value if the window is small or the file
+    # is special E.G terminal, help, nerdtree etc..
+    if blacklisted && !properWidth
+        return ""
+    endif
+
+    const line = getline(".")
+    const col = col(".")
+
+    # Handle empty lines and end of line in insert mode
+	if line == "" || strchars(line) < col
+        return "0x00"
+    endif
+
+    var char = strgetchar(line, col - 1)
+
+    # If the character is a single byte, print 2 hexs
+    if char < 256
+        return printf('0x%.2x', char)
+    endif
+
+    # If it's a multibyte character, print 4 hexs
+    return printf('0x%.4x', char)
 enddef
 
 def g:StatusLineFileEncoding(): string
