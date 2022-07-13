@@ -1,5 +1,32 @@
 vim9script
 
+g:NERDTreeMinimalUI = 1
+g:NERDTreeStatusline = -1
+
+g:WebDevIconsUnicodeDecorateFolderNodes = 1
+
+g:webdevicons_enable_nerdtree = 1
+
+g:NERDTreeSyntaxEnabledExtensions = [
+    'c', 'h',
+    'c++', 'cpp', 'hpp',
+    'php',
+    'html', 'css', 'js', 'jsx', 'cjs', 'mjs',
+    'md',
+    'vim', 'ini',
+    'sh',
+    'rs'
+]
+
+g:NERDTreeSyntaxEnabledExactMatches = [
+    'node_modules',
+    'favicon.ico'
+]
+
+g:NERDTreeFileExtensionHighlightFullName = 1
+g:NERDTreeExactMatchHighlightFullName = 1
+g:NERDTreePatternMatchHighlightFullName = 1
+
 g:lightline = {
     "colorscheme": "materia",
     "active": {
@@ -32,7 +59,8 @@ g:lightline = {
     	"fileformat": "g:StatusLineFileFormat",
     	"fileencoding": "g:StatusLineFileEncoding",
     	"lineinfo": "g:StatusLineCursor",
-        "percent": "g:StatusLineFilePercentage"
+        "percent": "g:StatusLineFilePercentage",
+        "mode": "g:StatusLineMode"
     },
 }
 
@@ -97,14 +125,12 @@ def g:StatusLineFiletype(): string
 enddef
 
 def FiletypeBlackListed(): bool
-    return &filetype =~ "\v(help|vimfiler|netrw|nerdtree|unite|terminal)"
+    return &filetype =~# '\v(help|vimfiler|netrw|nerdtree|unite|terminal)' || &buftype =~# '\v(terminal|netrw)'
 enddef
 
 def g:StatusLineFilename(): string
-	const blacklisted = FiletypeBlackListed()
-
-	if blacklisted
-		return &filetype
+	if FiletypeBlackListed()
+		return ""
 	endif
 
     const filename = expand("%:t") !=# "" ? expand("%:t") : "[New file]"
@@ -123,4 +149,12 @@ def g:StatusLineFilename(): string
     endif
 
     return name
+enddef
+
+const specialFilenameMap = {
+    "nerdtree": "nerdtree"
+}
+
+def g:StatusLineMode(): string
+    return get(specialFilenameMap, &filetype, g:lightline#mode())
 enddef

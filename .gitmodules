@@ -14,13 +14,10 @@
 	path = vim/pack/workspace/opt/fugitive
 	url = https://github.com/tpope/vim-fugitive
 [submodule "config/bundle/auto-pairs"]
-	path = vim/pack/syntax/start/auto-pairs
+	path = vim/pack/syntax/opt/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
-[submodule "config/plugins/awesome-vim-colorschemes"]
-	path = vim/pack/theme/start/awesome-vim-colorschemes
-	url = https://github.com/rafi/awesome-vim-colorschemes
 [submodule "config/pack/plugins/start/lightline"]
-	path = vim/pack/theme/start/lightline
+	path = vim/pack/theme/opt/lightline
 	url = https://github.com/itchyny/lightline.vim
 [submodule "config/pack/plugins/start/vim-gitbranch"]
 	path = config/pack/plugins/start/vim-gitbranch
@@ -28,3 +25,9 @@
 [submodule "vim/pack/plugins/start/nerdtree"]
 	path = vim/pack/workspace/opt/nerdtree
 	url = https://github.com/preservim/nerdtree
+[submodule "vim/pack/workspace/start/vim-devicons"]
+	path = vim/pack/workspace/opt/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
+[submodule "vim/pack/theme/start/vim-nerdtree-syntax-highlight"]
+	path = vim/pack/theme/opt/vim-nerdtree-syntax-highlight
+	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
