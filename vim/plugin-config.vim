@@ -116,7 +116,7 @@ def g:StatusLineHexValue(): string
 
     # Don't display hex value if the window is small or the file
     # is special E.G terminal, help, nerdtree etc..
-    if blacklisted && !properWidth
+    if blacklisted || !properWidth
         return ""
     endif
 
