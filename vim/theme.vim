@@ -1,3 +1,3 @@
 vim9script
 
-color tron
+color xeno

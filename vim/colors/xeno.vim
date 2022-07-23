@@ -1,12 +1,12 @@
 vim9script
-# From https://raw.githubusercontent.com/rainglow/vim/master/colors/tron.vim
+# Partialy from https://raw.githubusercontent.com/rainglow/vim/master/colors/tron.vim
 #########################################
 #########################################
-# Tron (rainglow)
+# Xeno
 #
-# https://github.com/rainglow/vim
+# https://github.com/XenoBino/dotfiles
 #
-# Copyright (c) Dayle Rees.
+# Copyright (c) Ahmed Al-Shoqanebi
 #########################################
 #########################################
 
@@ -22,7 +22,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-g:colors_name = "tron"
+g:colors_name = "xeno"
 
 #########################################
 ## Base Colors.                         #
@@ -48,7 +48,6 @@ hi Folded         guifg=#9cb4d9 guibg=#000000 gui=NONE
 hi Normal         guifg=#ffffff guibg=#14191f gui=NONE
 hi Boolean        guifg=#ffffff guibg=NONE    gui=NONE
 hi Character      guifg=#6ee2ff guibg=NONE    gui=NONE
-hi Comment        guifg=#324357 guibg=NONE    gui=NONE
 hi Comment        guifg=#416894 guibg=NONE    gui=NONE
 hi Conditional    guifg=#748aa6 guibg=NONE    gui=NONE
 hi Constant       guifg=NONE    guibg=NONE    gui=NONE
