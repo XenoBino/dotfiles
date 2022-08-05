@@ -31,3 +31,6 @@
 [submodule "vim/pack/theme/start/vim-nerdtree-syntax-highlight"]
 	path = vim/pack/theme/opt/vim-nerdtree-syntax-highlight
 	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
+[submodule "vim/pack/languages/opt/emmet-vim"]
+	path = vim/pack/languages/opt/emmet-vim
+	url = https://github.com/mattn/emmet-vim

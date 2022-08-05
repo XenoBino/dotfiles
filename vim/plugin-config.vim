@@ -1,5 +1,7 @@
 vim9script
 
+# g:user_emmet_leader_key="<C-N>"
+
 g:NERDTreeMinimalUI = 1
 g:NERDTreeStatusline = -1
 
@@ -62,6 +64,14 @@ g:lightline = {
         "percent": "g:StatusLineFilePercentage",
         "mode": "g:StatusLineMode"
     },
+    "separator": {
+        "left": "",
+        "right": ""
+    },
+    "subseparator": {
+        "left": "",
+        "right": ""
+    }
 }
 
 def g:StatusLineFilePercentage(): string
