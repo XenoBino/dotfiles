@@ -6,6 +6,7 @@ set nocompatible
 set showcmd
 set scrolloff=5
 set laststatus=2
+set encoding=utf-8
 
 syntax on
 g:c_comment_strings = 1
