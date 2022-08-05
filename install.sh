@@ -38,9 +38,10 @@ install_dir vim .vim
 # Install bash config
 make_backup .hushlogin
 touch $HOME/.hushlogin
+install_file bash_login.sh .bash_login
+install_file profile.sh .profile
 install_file bashrc.sh .bashrc
 install_file bash_aliases.sh .bash_aliases
-install_file bash_login.sh .bash_login
 install_file bash_logout.sh .bash_logout
 install_dir bash .bash
 
