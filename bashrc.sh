@@ -67,3 +67,4 @@ if ! shopt -oq posix; then
 fi
 
 . ~/.bash/init.sh
+. ~/.bashrc.local
