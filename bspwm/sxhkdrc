@@ -1,0 +1,20 @@
+# Spawn a terminal
+alt + Return
+	kitty
+
+# Make sxhkd reload its configuration files:
+super + shift + r
+	pkill -USR1 -x sxhkd
+
+# Spawn a browser
+alt + b
+	firefox
+
+# Open the task manager
+alt + t
+	xfce4-taskmanager
+
+# Quit/Restart bspwm
+super + shift + {q,r}
+  bspc {quit,wm -r}
+

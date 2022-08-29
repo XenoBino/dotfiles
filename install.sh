@@ -56,3 +56,8 @@ install_file gitconfig.ini .gitconfig
 
 # Install kitty config
 install_file kitty.conf .config/kitty/kitty.conf
+
+# Install bspwm and sxhkd config
+install_file bspwm/bspwmrc .config/bspwm/bspwmrc
+install_file bspwm/sxhkdrc .config/sxhkd/sxhkdrc
+install_file bspwm/wallpaper.jpg .local/share/wallpapers/bspwm-default.jpg
