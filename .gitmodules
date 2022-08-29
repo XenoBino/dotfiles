@@ -1,36 +1,36 @@
-[submodule "config/bundle/Vundle.vim"]
-	path = config/plugins/Vundle.vim
-	url = https://github.com/vundlevim/Vundle.vim
-[submodule "config/bundle/vim-airline"]
-	path = config/plugins/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "config/bundle/vim-airline-themes"]
-	path = config/plugins/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
-[submodule "config/bundle/vim-cycle-airline-theme"]
-	path = config/plugins/vim-cycle-airline-theme
-	url = https://github.com/qdddddd/vim-cycle-airline-theme
-[submodule "config/bundle/vim-fugitive"]
-	path = vim/pack/workspace/opt/fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "config/bundle/auto-pairs"]
-	path = vim/pack/syntax/opt/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs
-[submodule "config/pack/plugins/start/lightline"]
-	path = vim/pack/theme/opt/lightline
-	url = https://github.com/itchyny/lightline.vim
-[submodule "config/pack/plugins/start/vim-gitbranch"]
-	path = config/pack/plugins/start/vim-gitbranch
-	url = https://github.com/itchyny/vim-gitbranch
-[submodule "vim/pack/plugins/start/nerdtree"]
-	path = vim/pack/workspace/opt/nerdtree
-	url = https://github.com/preservim/nerdtree
-[submodule "vim/pack/workspace/start/vim-devicons"]
-	path = vim/pack/workspace/opt/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons
-[submodule "vim/pack/theme/start/vim-nerdtree-syntax-highlight"]
-	path = vim/pack/theme/opt/vim-nerdtree-syntax-highlight
-	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
 [submodule "vim/pack/languages/opt/emmet-vim"]
-	path = vim/pack/languages/opt/emmet-vim
+	path = nvim/site/pack/packer/opt/emmet-vim
 	url = https://github.com/mattn/emmet-vim
+[submodule "nvim/site/pack/packer/start/packer.nvim"]
+	path = nvim/site/pack/packer/start/packer.nvim
+	url = https://github.com/wbthomason/packer.nvim
+[submodule "nvim/site/pack/packer/start/nvim-autopairs"]
+	path = nvim/site/pack/packer/start/nvim-autopairs
+	url = https://github.com/windwp/nvim-autopairs
+[submodule "nvim/site/pack/packer/start/neo-tree.nvim"]
+	path = nvim/site/pack/packer/start/neo-tree.nvim
+	url = https://github.com/nvim-neo-tree/neo-tree.nvim
+[submodule "nvim/site/pack/packer/start/nui.nvim"]
+	path = nvim/site/pack/packer/start/nui.nvim
+	url = https://github.com/MunifTanjim/nui.nvim
+[submodule "nvim/site/pack/packer/start/plenary.nvim"]
+	path = nvim/site/pack/packer/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "nvim/site/pack/packer/start/nvim-web-devicons"]
+	path = nvim/site/pack/packer/start/nvim-web-devicons
+	url = https://github.com/kyazdani42/nvim-web-devicons
+[submodule "nvim/site/pack/packer/start/tokyonight.nvim"]
+	path = nvim/site/pack/packer/start/tokyonight.nvim
+	url = https://github.com/folke/tokyonight.nvim
+[submodule "nvim/site/pack/packer/start/lualine.nvim"]
+	path = nvim/site/pack/packer/start/lualine.nvim
+	url = https://github.com/nvim-lualine/lualine.nvim
+[submodule "nvim/site/pack/packer/start/bufferline.nvim"]
+	path = nvim/site/pack/packer/start/bufferline.nvim
+	url = https://github.com/akinsho/bufferline.nvim
+[submodule "nvim/site/pack/packer/start/nvim-lspconfig"]
+	path = nvim/site/pack/packer/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "nvim/site/pack/packer/opt/nvim-web-devicons"]
+	path = nvim/site/pack/packer/opt/nvim-web-devicons
+	url = https://github.com/kyazdani42/nvim-web-devicons

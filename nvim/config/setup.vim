@@ -1,5 +1,3 @@
-vim9script
-
 filetype plugin on
 
 set nocompatible
@@ -9,12 +7,12 @@ set laststatus=2
 set encoding=utf-8
 
 syntax on
-g:c_comment_strings = 1
+let g:c_comment_strings = 1
 
 if !has('gui_running')
-	set t_Co=256
+  set t_Co=256
 endif
 
 if $COLORTERM ==# "truecolor"
-	set termguicolors
+  set termguicolors
 endif

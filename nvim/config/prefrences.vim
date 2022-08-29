@@ -1,11 +1,9 @@
-vim9script
-
 set number
 set tabstop=4
 set shiftwidth=4
 set noshowmode
 set showcmd
-set mouse-=a
+set mouse=""
 
 # Allow h and l to switch lines
 # From https://superuser.com/a/559436
