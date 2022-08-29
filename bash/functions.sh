@@ -33,5 +33,5 @@ r() {
 }
 
 cols() {
-	echo "Width: $COLUMNS Columns"
+	echo "Width: $COLUMNS Columns, Height: $LINES Rows"
 }
