@@ -53,3 +53,6 @@ install_dir bash .bash
 
 # Install git config
 install_file gitconfig.ini .gitconfig
+
+# Install kitty config
+install_file kitty.conf .config/kitty/kitty.conf
