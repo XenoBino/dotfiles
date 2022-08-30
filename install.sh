@@ -43,7 +43,6 @@ install_dir nvim/config .config/nvim
 # Install bash config
 make_backup .hushlogin
 touch $HOME/.hushlogin
-touch $HOME/.bashrc.local
 install_file bash_login.sh .bash_login
 install_file profile.sh .profile
 install_file bashrc.sh .bashrc
