@@ -3,7 +3,7 @@ alt + Return
 	kitty
 
 # Make sxhkd reload its configuration files:
-super + shift + r
+super + r
 	pkill -USR1 -x sxhkd
 
 # Spawn a browser
@@ -13,6 +13,14 @@ alt + b
 # Open the task manager
 alt + t
 	xfce4-taskmanager
+
+# Reset the keyboard layout (I mess it up too often)
+shift + space
+	setxkbmap us
+
+# Instant screenshot
+Print
+	flameshot full -p ~/Photos/screenshots/
 
 # Quit/Restart bspwm
 super + shift + {q,r}

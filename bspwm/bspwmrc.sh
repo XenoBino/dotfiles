@@ -1,8 +1,12 @@
-#! /bin/sh
+#!/bin/sh
 
+picom --daemon
 sxhkd &
 nitrogen --set-scaled ~/.local/share/wallpapers/bspwm-default.jpg
 ~/.config/polybar/launch.sh --panels &
+
+# `bspwmrc` but not tracked by version control
+. ~/.config/bspwm/bspwmrc.local
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -22,3 +26,5 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+bspc rule -a xfce4-taskmanager state=floating
