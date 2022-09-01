@@ -1,28 +1,102 @@
-# Spawn a terminal
-alt + Return
-	kitty
+################################
+##                            ##
+##       Configuration        ##
+##                            ##
+################################
 
-# Make sxhkd reload its configuration files:
+# Reload sxhkd configuration
 super + r
-	pkill -USR1 -x sxhkd
-
-# Spawn a browser
-alt + b
-	firefox
-
-# Open the task manager
-alt + t
-	xfce4-taskmanager
-
-# Reset the keyboard layout (I mess it up too often)
-shift + space
-	setxkbmap us
-
-# Instant screenshot
-Print
-	flameshot full -p ~/Photos/screenshots/
+  pkill -USR1 -x sxhkd
 
 # Quit/Restart bspwm
 super + shift + {q,r}
   bspc {quit,wm -r}
 
+################################
+##                            ##
+##     XF86 Media buttons     ##
+##                            ##
+################################
+
+# Increase/decrease the brightness
+XF86MonBrightness{Up,Down}
+  xbacklight {-inc,-dec} 10
+
+# Increase/decrease speaker level
+XF86Audio{Raise,Lower}Volume
+  pactl set-sink-volume 0 {+,-}5%
+
+# Toggle mute/unmute
+XF86AudioMute
+  pactl set-sink-mute 0 toggle
+
+XF86AudioMicMute
+  pactl set-source-mute 1 toggle
+
+# Turn bluetooth/wifi on/off
+XF86{Bluetooth,WLAN}
+  rfkill list {bluetooth,wifi} | head -n1 | sed -E "s/([0-9]+): .*: .*/\1/" | xargs rfkill {unblock,block}
+
+################################
+##                            ##
+##      Window Management     ##
+##                            ##
+################################
+
+# Switch focus
+alt + {h,j,k,l}
+  bspc node -f {west,south,north,east}
+
+# Switch focus to the next window
+alt + n
+  bspc node -f next.!hidden
+
+# Send window to virtual desktop
+alt + shift + {1,2,3,4,5,6,7,8,9,10}
+  bspc node -d "^{1,2,3,4,5,6,7,8,9,10}"
+
+# Switch to virtual desktop
+alt + {1,2,3,4,5,6,7,8,9,0}
+  bspc desktop -f "^{1,2,3,4,5,6,7,8,9,10}"
+
+# Close the current window
+alt + m
+  bspc node -c
+
+# Toggle fullscreen
+alt + f
+   bspc node -t {fullscreen,tiled}
+
+# Select the direction of the next opened window
+alt + {H,J,K,L}
+  bspc node -p {west,south,north,east}
+
+################################
+##                            ##
+##   Launching applications   ##
+##                            ##
+################################
+
+# Launch a terminal
+alt + Return
+  kitty
+
+# Launch firefox
+alt + b
+  firefox
+
+# Launch the task manager
+alt + t
+  xfce4-taskmanager
+
+# Launch discord
+alt + d
+  discord
+
+# Launch telegram
+alt + a
+  telegram-desktop
+
+# Instant screenshot
+alt + p
+  flameshot full -p ~/Photos/screenshots/
