@@ -81,19 +81,19 @@ alt + {H,J,K,L}
 alt + Return
   kitty
 
-# Launch firefox
+# Firefox
 alt + b
   firefox
 
-# Launch the task manager
-alt + t
-  xfce4-taskmanager
-
-# Launch discord
+# Discord
 alt + d
   discord
 
-# Launch telegram
+# Thunar
+alt + t
+  thunar
+
+# Telegram
 alt + a
   telegram-desktop
 
