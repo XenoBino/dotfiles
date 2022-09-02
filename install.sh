@@ -63,4 +63,5 @@ install_file kitty.conf .config/kitty/kitty.conf
 install_file bspwm/bspwmrc.sh .config/bspwm/bspwmrc
 install_file bspwm/sxhkdrc .config/sxhkd/sxhkdrc
 install_file bspwm/picom.conf .config/picom.conf
-install_file bspwm/wallpaper.jpg .local/share/wallpapers/bspwm-default.jpg
+install_file bspwm/wallpapers/mountains.jpg .local/share/wallpapers/bspwm/mountains.jpg
+install_file bspwm/wallpapers/boat.jpg .local/share/wallpapers/bspwm/boat.jpg

@@ -5,9 +5,8 @@ bspc monitor -d I II III IV V VI VII VIII IX X
 picom --daemon
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-nitrogen --set-scaled ~/.local/share/wallpapers/bspwm-default.jpg
-# $HOME/.config/polybar/launch.sh --panels &
-~/.config/polybar/launch.sh --cuts &
+nitrogen --set-scaled ~/.local/share/wallpapers/bspwm/boat.jpg
+~/.config/polybar/launch.sh --material &
 
 # like `bspwmrc` but not tracked by version control
 [ -f $HOME/.config/bspwm/bspwmrc.local ] && . $HOME/.config/bspwm/bspwmrc.local;
