@@ -40,6 +40,8 @@ install_dir() {
 install_dir nvim/site .local/share/nvim/site
 install_dir nvim/config .config/nvim
 
+if command -v nvim &> /dev/null; then nvim -c "PackerCompile" -c "q"; fi
+
 # Install bash config
 make_backup .hushlogin
 touch $HOME/.hushlogin
