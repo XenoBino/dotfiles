@@ -24,18 +24,25 @@ XF86MonBrightness{Up,Down}
 
 # Increase/decrease speaker level
 XF86Audio{Raise,Lower}Volume
-  pactl set-sink-volume 0 {+,-}5%
+  pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
 
 # Toggle mute/unmute
 XF86AudioMute
-  pactl set-sink-mute 0 toggle
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Toggle Mic mute/unmute
 XF86AudioMicMute
-  pactl set-source-mute 1 toggle
+  pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Audio pause/play buttons
+XF86Audio{Play,Pause}
+  playerctl {play,pause}
 
 # Turn bluetooth/wifi on/off
 XF86{Bluetooth,WLAN}
   rfkill list {bluetooth,wifi} | head -n1 | sed -E "s/([0-9]+): .*: .*/\1/" | xargs rfkill {unblock,block}
+
+## List all bluetooth/wifi devices, get the first one, extract its id, then block/unblock
 
 ################################
 ##                            ##
