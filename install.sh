@@ -50,22 +50,22 @@ if command -v nvim &> /dev/null; then nvim -c "PackerCompile" -c "q"; fi
 make_backup .hushlogin
 touch $HOME/.hushlogin
 make_backup .bash_profile
-install_file bash_login.sh .bash_login
-install_file profile.sh .profile
-install_file bashrc.sh .bashrc
-install_file bash_aliases.sh .bash_aliases
-install_file bash_logout.sh .bash_logout
-install_dir bash .bash
+install_file bash/bash_login.sh   .bash_login
+install_file bash/profile.sh      .profile
+install_file bash/bashrc.sh       .bashrc
+install_file bash/bash_aliases.sh .bash_aliases
+install_file bash/bash_logout.sh  .bash_logout
+install_dir  bash/bash.d          .bash.d
 
 # Install git config
-install_file gitconfig.ini .gitconfig
+install_file cli/gitconfig.ini .gitconfig
 
 # Install kitty config
-install_file kitty.conf .config/kitty/kitty.conf
+install_file desktop/kitty.conf .config/kitty/kitty.conf
 
 # Install bspwm, picom and sxhkd config
-install_file bspwm/bspwmrc.sh .config/bspwm/bspwmrc
-install_file bspwm/sxhkdrc .config/sxhkd/sxhkdrc
-install_file bspwm/picom.conf .config/picom.conf
-install_file bspwm/wallpapers .local/share/wallpapers/bspwm
-install_file dunst/dunstrc dunst/dunstrc
+install_file desktop/bspwmrc.sh .config/bspwm/bspwmrc
+install_file desktop/sxhkdrc    .config/sxhkd/sxhkdrc
+install_file desktop/picom.conf .config/picom.conf
+install_dir  desktop/wallpapers .local/share/wallpapers/xeno
+install_dir  desktop/dunstrc    .config/dunst/dunstrc

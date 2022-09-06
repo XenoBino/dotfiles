@@ -1,5 +1,5 @@
-. ~/.bash/functions.sh
-. ~/.bash/env.sh
+. ~/.bash.d/functions.sh
+. ~/.bash.d/env.sh
 
 unset PROMPT_COMMAND
 unset PS1
