@@ -84,6 +84,10 @@ alt + {H,J,K,L}
 ##                            ##
 ################################
 
+# Generic application launcher
+alt + r
+  rofi -show run
+
 # Launch a terminal
 alt + Return
   kitty
