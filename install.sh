@@ -68,3 +68,4 @@ install_file bspwm/bspwmrc.sh .config/bspwm/bspwmrc
 install_file bspwm/sxhkdrc .config/sxhkd/sxhkdrc
 install_file bspwm/picom.conf .config/picom.conf
 install_file bspwm/wallpapers .local/share/wallpapers/bspwm
+install_file dunst/dunstrc dunst/dunstrc
