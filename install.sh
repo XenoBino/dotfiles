@@ -12,15 +12,19 @@ for i in {1..10000}; do
 done
 
 if [ "$LOG_FILE" == "" ]; then
-  echo -e "\e[31mError: \e[0m Too many ~/.XenoBino.dotfiles.*.log files" >&2
+  printf "\x1b[31m%s\x1b[0m %s\n" "Error:" "Too many ~/.XenoBino.dotfiles.*.log files" >&2
 fi
 
 make_backup() {
+  # If the directory containing the file or directory to backup doesn't exist,
+  # create it.
   DIR=$(dirname ~/$1)
   if [ ! -d $DIR ]; then
     mkdir -p $DIR
     return
   fi
+
+  # If the file or the directory to backup exists, make a backup
   if [ -f $HOME/$1 ] || [ -d $HOME/$1 ]; then
     backup_name=$HOME/$1~$TIMESTAMP
     mv $HOME/$1 $backup_name
@@ -63,5 +67,4 @@ install_file kitty.conf .config/kitty/kitty.conf
 install_file bspwm/bspwmrc.sh .config/bspwm/bspwmrc
 install_file bspwm/sxhkdrc .config/sxhkd/sxhkdrc
 install_file bspwm/picom.conf .config/picom.conf
-install_file bspwm/wallpapers/mountains.jpg .local/share/wallpapers/bspwm/mountains.jpg
-install_file bspwm/wallpapers/boat.jpg .local/share/wallpapers/bspwm/boat.jpg
+install_file bspwm/wallpapers .local/share/wallpapers/bspwm
