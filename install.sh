@@ -67,5 +67,5 @@ install_file desktop/kitty.conf .config/kitty/kitty.conf
 install_file desktop/bspwmrc.sh .config/bspwm/bspwmrc
 install_file desktop/sxhkdrc    .config/sxhkd/sxhkdrc
 install_file desktop/picom.conf .config/picom.conf
-install_dir  desktop/wallpapers .local/share/wallpapers/xeno
 install_dir  desktop/dunstrc    .config/dunst/dunstrc
+install_dir  images/wallpapers  .local/share/wallpapers/xeno
