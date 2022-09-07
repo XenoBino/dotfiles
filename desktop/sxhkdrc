@@ -90,7 +90,7 @@ alt + r
 
 # Launch a terminal
 alt + Return
-  kitty
+  alacritty
 
 # Firefox
 alt + b
