@@ -9,7 +9,7 @@
 [ -f $HOME/.config/bspwm/bspwmrc.local ] && . $HOME/.config/bspwm/bspwmrc.local;
 
 # Defaults if not configured in the config file
-: ${wallpaper:=~/.local/share/wallpapers/bspwm/boat.jpg}
+: ${wallpaper:=~/.local/share/wallpapers/xeno/boat.jpg}
 : ${desktops:=I II III IV V VI VII VIII IX X}
 
 # Set monitor names (and count) according to the $desktops variable
