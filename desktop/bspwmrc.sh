@@ -14,8 +14,8 @@
 
 # Set monitor names (and count) according to the $desktops variable
 bspc monitor -d $desktops
-bspc config border_width            3
-bspc config window_gap             12
+bspc config border_width            2
+bspc config window_gap              8
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
